@@ -1,15 +1,21 @@
 package com.project1.model;
 
-public class User {
 
-    private Long ID;
-    private String username;
-    private String email;
-    private Map<Long, Application> ActiveUserApplications = new HashMap<>();
 
-    public User(Long ID, String username, String email) {
+public class User{
 
-        if (username == null || username.isBlank()) {
+    private final Long id;
+    private final String userName;
+    private final String email;
+
+
+    public User(Long id, String userName, String email) {
+
+        if (id == null) {
+            throw new IllegalArgumentException("Argument error, argumet is null|id");
+        }
+
+        if (userName == null || userName.isBlank()) {
             throw new IllegalArgumentException("Argument error, argumet is null/empty|ID");
         }
 
@@ -17,19 +23,24 @@ public class User {
             throw new IllegalArgumentException("Argument error, argumet is null/empty|email");
         }
 
-        this.username = username;
+
+        this.id = id;
+        this.userName = userName;
         this.email = email;
 
-
     }
 
-    private Long getID() {
-        return thsis.id;
+    public Long getId() {
+        return this.id;
     }
 
-    private 
+    public String getUserName() {
+        return userName;
+    }
 
-
+    public String getEmail() {
+        return email;
+    }
 
     
 }
