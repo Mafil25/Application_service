@@ -5,8 +5,8 @@ import java.util.Objects;
 public class Application {
 
     private final Long id;
-    private User user;
-    private String title;
+    private final User user;
+    private final String title;
     private ApplicationStatus status;
     private ApplicationPriority priority;
 
@@ -52,8 +52,22 @@ public class Application {
         return priority;
     }
 
+    public ApplicationStatus getStatus() {
+        return status
+    }
 
+    public void changeStatus(Application status) {
+        this.status = status;
 
+    }
+
+    public ApplicationPriority getPriority() {
+        return priority
+    }
+
+    public void changePriority(ApplicationPriority priority) {
+        this.priority = priority;
+    }
 
 
     @Override

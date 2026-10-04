@@ -1,9 +1,9 @@
 package com.project1.repository;
 
+import java.util.List;
 import java.util.Optional;
 
-interface Repository<T, ID> {
-
+interface Repository<ID, T> {
 
     void save(T entity);
 
@@ -12,5 +12,7 @@ interface Repository<T, ID> {
     List<T> findAll();
 
     void deleteById(ID id);
+
+    boolean existsById(ID id);
     
 }
